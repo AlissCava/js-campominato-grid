@@ -25,4 +25,24 @@ function generateGrid() {
       // Aggiungiamo la cella al contenitore della griglia
       gridContainer.appendChild(cell);
     }
-  }
+}
+  
+
+
+// Funzione chiamata quando l'utente clicca su una cella
+function handleClick(cellNumber) {
+    // Stampiamo il numero della cella cliccata nella console
+    console.log(`Cella cliccata: ${cellNumber}`);
+  
+    // Selezioniamo la cella cliccata utilizzando la classe specifica
+    const clickedCell = document.querySelector(`.cell-${cellNumber}`);
+  
+    // Verifica se l'elemento esiste prima di manipolarlo
+    if (clickedCell) {
+      // Aggiungiamo una classe alla cella cliccata per cambiare il suo stile
+      clickedCell.classList.add('clicked');
+    } else {
+      console.error(`Cella non trovata per il numero: ${cellNumber}`);
+    }
+}
+  
